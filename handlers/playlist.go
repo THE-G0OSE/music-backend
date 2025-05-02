@@ -90,7 +90,7 @@ func DeletePlaylist(c echo.Context) error {
 	if err := database.DB.Delete(&playlist, "id = ?", id).Error; err != nil {
 		return c.JSON(500, echo.Map{"error": "failed to delete comment"})
 	}
-	return c.NoContent(200)
+	return c.JSON(200, echo.Map{"error": "success"})
 }
 
 func GetPlaylist(c echo.Context) error {
