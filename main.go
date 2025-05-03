@@ -52,7 +52,7 @@ func main() {
 	e.PUT("/media/like/:id/:username", handlers.LikeMusic)
 	e.PUT("/media/unlike/:id/:username", handlers.UnlikeMusic)
 
-	e.DELETE("/media/:id", handlers.DeleteMusic)
+	e.DELETE("/media/delete/:id", handlers.DeleteMusic)
 
 	//comments
 	e.POST("/comments", handlers.CreateComment)

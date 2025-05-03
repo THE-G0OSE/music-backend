@@ -78,6 +78,7 @@ func CreateUser(c echo.Context) error {
 	if user.Playlists == nil {
 		user.Playlists = []string{}
 	}
+	user.Genre = "rock"
 	if err := database.DB.Create(user).Error; err != nil {
 		fmt.Println(err)
 		return c.JSON(http.StatusInternalServerError, map[string]string{"error": "Database error"})
